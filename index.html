@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMIT AI 활용 연구회 | AI Application Research Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for a cleaner look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #ffffff;
+            color: #1d1d1f;
+            word-break: keep-all;
+        }
+
+        .section-padding {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card-shadow:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Roadmap line */
+        .roadmap-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e2e8f0;
+        }
+        @media (min-width: 768px) {
+            .roadmap-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
+                    <i data-lucide="cpu" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-extrabold tracking-tight">SMIT <span class="text-blue-600">AI</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-blue-600 transition">연구회 소개</a>
+                <a href="#values" class="hover:text-blue-600 transition">핵심 가치</a>
+                <a href="#activities" class="hover:text-blue-600 transition">활동</a>
+                <a href="#roadmap" class="hover:text-blue-600 transition">로드맵</a>
+            </div>
+            <!-- Google Form Link in Nav -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhbvL0W8zFqZl1IzRA-DmLBZoKOMVx9kNXRqE8iMm9uNUAmQ/viewform?usp=dialog" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-md shadow-blue-200">
+                시작하기
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-500 text-xs font-bold mb-8">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                서울미디어대학원대학교 AI 활용 연구회
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-8 tracking-tight leading-[1.1]">
+                미디어 지성과 <br>
+                <span class="text-gradient">AI 기술의 융합</span>
+            </h1>
+            <p class="text-xl text-slate-500 mb-12 leading-relaxed max-w-2xl mx-auto">
+                이론을 넘어 실무로, 재학생과 졸업생이 함께 성장하는 <br class="hidden md:block">
+                가장 역동적인 AI 연구 커뮤니티입니다.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <!-- Google Form Link in Hero -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhbvL0W8zFqZl1IzRA-DmLBZoKOMVx9kNXRqE8iMm9uNUAmQ/viewform?usp=dialog" target="_blank" class="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold hover:bg-slate-800 transition">연구회 가입하기</a>
+                <a href="#activities" class="bg-white border border-slate-200 text-slate-700 px-10 py-4 rounded-2xl font-bold hover:bg-slate-50 transition">활동 내용 보기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section id="values" class="section-padding bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-bold mb-4">Core Values</h2>
+                <div class="w-12 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-[32px] card-shadow text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">실용적 탐구</h3>
+                    <p class="text-slate-500 leading-relaxed">복잡한 이론보다는 실제 업무와 창작에 즉시 적용 가능한 AI 기술에 집중합니다.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] card-shadow text-center">
+                    <div class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">공유와 상생</h3>
+                    <p class="text-slate-500 leading-relaxed">선후배 간의 벽을 허물고 각자의 전문 지식을 아낌없이 공유하여 함께 성장합니다.</p>
+                </div>
+                <div class="bg-white p-10 rounded-[32px] card-shadow text-center">
+                    <div class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">지속적 혁신</h3>
+                    <p class="text-slate-500 leading-relaxed">매주 업데이트되는 AI 트렌드를 놓치지 않고 분석하여 미래 경쟁력을 확보합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities" class="section-padding">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-bold mb-6">Key Activities</h2>
+                    <p class="text-slate-500 text-lg">학기 중 정기적인 만남과 방학 기간의 몰입형 세미나를 통해 깊이 있는 학습을 지원합니다.</p>
+                </div>
+                <div class="bg-blue-50 text-blue-700 px-6 py-3 rounded-2xl font-bold flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-5 h-5"></i>
+                    매주 화요일 19:00 - 21:30
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group relative overflow-hidden rounded-[32px] aspect-video card-shadow">
+                    <img src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?auto=format&fit=crop&q=80&w=1200" alt="정기 모임" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent p-8 flex flex-col justify-end">
+                        <h4 class="text-2xl font-bold text-white mb-2">정기 모임 (Semester)</h4>
+                        <p class="text-slate-300">최신 생성형 AI 모델 분석 및 전공 분야별 활용 사례 연구</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-[32px] aspect-video card-shadow border-4 border-blue-100">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200" alt="방학 세미나" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-blue-600/80 p-8 flex flex-col justify-end">
+                        <div class="mb-auto">
+                            <span class="bg-white text-blue-600 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider">Vacation School</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">방학 집중 세미나</h4>
+                        <p class="text-white/90">현업 전문가 특강 및 2박 3일 해커톤 스타일의 AI 심화 프로젝트</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section-padding bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-20 text-center">성장을 위한 체계적 로드맵</h2>
+            
+            <div class="relative roadmap-line max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="relative pl-16 md:pl-0 md:flex items-center justify-between mb-24">
+                    <div class="md:w-[45%] md:text-right hidden md:block">
+                        <span class="text-slate-500 font-bold text-sm tracking-widest uppercase">Fundamental</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center z-10 border-4 border-slate-900">
+                        <i data-lucide="check" class="w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-[45%] bg-slate-800 p-8 rounded-3xl">
+                        <h5 class="text-blue-400 font-bold mb-2">Level 01. AI 리터러시</h5>
+                        <p class="text-slate-400 text-sm leading-relaxed">생성형 AI의 기초 개념과 대표적인 도구(ChatGPT, Midjourney)의 사용법을 완벽히 익힙니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative pl-16 md:pl-0 md:flex items-center justify-between mb-24">
+                    <div class="md:w-[45%] bg-slate-800 p-8 rounded-3xl">
+                        <h5 class="text-blue-400 font-bold mb-2 text-right">Level 02. 실무 고도화</h5>
+                        <p class="text-slate-400 text-sm leading-relaxed text-right">전문적인 프롬프트 엔지니어링 기술과 AI를 활용한 비즈니스 자동화 워크플로우를 구축합니다.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center z-10 border-4 border-slate-900 text-xs font-bold">2</div>
+                    <div class="md:w-[45%] hidden md:block">
+                        <span class="text-slate-500 font-bold text-sm tracking-widest uppercase">Professional</span>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative pl-16 md:pl-0 md:flex items-center justify-between mb-24">
+                    <div class="md:w-[45%] md:text-right hidden md:block">
+                        <span class="text-purple-400 font-bold text-sm tracking-widest uppercase">Seasonal Event</span>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center z-10 border-4 border-slate-900">
+                        <i data-lucide="star" class="w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-[45%] bg-slate-800 p-8 rounded-3xl border border-purple-500/30">
+                        <h5 class="text-purple-400 font-bold mb-2">SPECIAL. 방학 세미나</h5>
+                        <p class="text-slate-300 text-sm leading-relaxed">학점 부담 없이 오직 실습에만 몰입하는 기간. 현업 멘토와 함께 완성도 높은 AI 서비스를 기획합니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative pl-16 md:pl-0 md:flex items-center justify-between">
+                    <div class="md:w-[45%] bg-slate-800 p-8 rounded-3xl">
+                        <h5 class="text-blue-400 font-bold mb-2 text-right">Level 03. 마스터 프로젝트</h5>
+                        <p class="text-slate-400 text-sm leading-relaxed text-right">학술 논문 작성, 공모전 참여 또는 AI 기반 창업 포트폴리오를 완성하여 사회로 나갑니다.</p>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center z-10 border-4 border-slate-900 text-xs font-bold">4</div>
+                    <div class="md:w-[45%] hidden md:block">
+                        <span class="text-slate-500 font-bold text-sm tracking-widest uppercase">Expert</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated CTA Section (Replacing the local form) -->
+    <section id="join" class="section-padding bg-slate-50">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <div class="bg-white p-12 md:p-16 rounded-[48px] card-shadow border border-slate-100">
+                <div class="w-20 h-20 bg-blue-600 text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl shadow-blue-200">
+                    <i data-lucide="file-text" class="w-10 h-10"></i>
+                </div>
+                <h2 class="text-4xl font-black mb-6">함께 성장을 시작하세요</h2>
+                <p class="text-slate-500 text-lg mb-10 leading-relaxed">
+                    SMIT AI 활용 연구회는 구글 양식을 통해 <br class="hidden md:block">
+                    신입 회원을 상시 모집하고 있습니다. 
+                </p>
+                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhbvL0W8zFqZl1IzRA-DmLBZoKOMVx9kNXRqE8iMm9uNUAmQ/viewform?usp=dialog" target="_blank" class="inline-flex items-center gap-3 bg-blue-600 text-white font-bold px-12 py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl shadow-blue-100 group">
+                    신청서 작성하러 가기
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition"></i>
+                </a>
+                
+                <p class="mt-8 text-sm text-slate-400">
+                    * SMIT 재학생 및 졸업생 확인 절차가 포함되어 있습니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-slate-100 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center">
+                    <i data-lucide="cpu" class="text-white w-3 h-3"></i>
+                </div>
+                <span class="font-bold text-slate-900">SMIT AI ARG</span>
+            </div>
+            <p class="text-slate-400 text-sm">&copy; 2024 Seoul Media Institute of Technology. All rights reserved.</p>
+            <div class="flex gap-6 text-slate-400">
+                <a href="#" class="hover:text-blue-600 transition"><i data-lucide="instagram"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i data-lucide="mail"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i data-lucide="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
